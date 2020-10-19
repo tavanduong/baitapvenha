@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    width: 601px;
+    margin: 100px  auto 100px;
+}
+ .wrap > table{
+    
+    width: 601px;
+    height: 600px;
+    border-collapse: collapse;
+}
+ table td , th {
+     border: 1px solid gray;  
+     border-collapse: collapse;
+}
+.Tieu-de{
+width: 600px;
+height: 50px;
+margin: 10px 0px;
+background-color: greenyellow;
+text-align: center;
+line-height: 50px;
+border-radius: 8px;
+}
+.wrap-2{
+    width: 601px;  
+    margin: 20px auto;
+    display: flex;
+}
+.tb-2-1{
+    width: 295px;
+    margin-right: 15px ;   
+}
+.wrap-2 .tb-2-1 table{
+    width: 295px;
+    border-collapse: collapse;
+}
+.table-2-1 td , th {
+    border: 1px solid grey;
+    width: 295px;
+    border-collapse: collapse;  
+}
+.table-2-1 td {
+    text-align: center;
+    font-weight: bold;
+}
+.tb-2-1{
+    width: 295px;
+    margin-right: 15px ;}
+  .wrap-2 .tb-2-2 table{
+        width: 295px;
+        border-collapse: collapse;}
+.table-2-2 td{
+font-weight: bold;
+text-align: center;
+}

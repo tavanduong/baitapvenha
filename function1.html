@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cSangf(x){
+            let F = (x*1.8)+32;
+            console.log(F);
+            alert(F);
+        }
+        function fSangc(x){
+            let C = (x-32)/1.8;
+            console.log(C);
+            alert(C);
+        }
+        function theKy(x){
+            let n = (x)/100 + 1;
+            if ( 0 < x & x< 101) {
+                console.log(1);
+                alert(1)
+            }
+           else {
+               console.log(Math.floor(n));
+               alert(Math.floor(n));
+           }
+        }
+        function chuoi(motChuoi) {
+            let chuoiMoi = motChuoi.slice(0, 10);
+            alert(chuoiMoi + ' ' + '...');
+            console.log(chuoiMoi + ' ' + '...');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

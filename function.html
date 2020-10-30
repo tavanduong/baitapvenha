@@ -1,22 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function thongbao(){
-            alert('Day la buoi hoc dau tien');
-            console.log("Day la thong bao console.log");
+        function get_sum(x, y) {
+            var i_sum = x + y;
+            console.log(i_sum);
         }
-        function tong(a,b,c){
-            let tong = 3*a+2*b-c;
-            alert('Tong cua hai so la'+' '+(Math.pow(tong,2)));
+        function run(name, year_of_birth) {
+            var d = new Date();
+            var current_year = d.getFullYear();
+            // define a object 
+            var object = {
+                name: name,
+                year_of_birth: year_of_birth,
+                address: "Ha Noi"
+            };
+
+            // Calculate age
+            var age = current_year - year_of_birth - 1;
+
+            console.log(object); // print object
+            console.log(object.name + " is " + age + " years old");
         }
-        
+        const string = 'Techmaster';
+        for (let i = 0; i < string.length; i++) {
+            console.log(string[i])
+        }
+
+        let person = {
+            name: "Duong",
+            age: 24,
+            fullName: function () {
+                console.log(this.name + " is " + this.age)
+            }
+        }
+        const student = {
+            firstName: "Duong",
+            lastName: "Ta ",
+            age: 24,
+        }
+        for (const key in student) {
+            console.log(student[key]);
+        }
+        let numbers = [1, 2, 3, 4, 5, 6, 7]
+        let names = ["duong", "ta", "linh"]
+        let checks = [true, true, false, true, false, false]
+        numbers[3];
+        numbers.length
+        names.length
+        checks.length;
+
+        numbers.push(8, 9, 10)
+        console.log(numbers)
+        // xoa phan tu cuoi cua mang 
+        numbers.pop()
+        // them phan tu vao dau mang 
+        names.unshift("Hoa")
+        // xoa phan tu dau mang
+        names.shift()
+        // kiem tra so thu tu cua phan tu 
+        console.log("Index of values 'ta'", names.indexOf('duong'))
+        for (let i; i < names.length; i++) {
+            console.log(names[i])
+        }
+        for (let item of checks) {
+            console.log(item)
+        }
+
+        function tinhTong(arrs) {
+            let tong = 0;
+            for (let i of arrs) {
+                tong = tong + Math.pow(i, 2);
+            }
+            return tong;
+        }
+       
+        //tao ra mang moi thoa man mot dieu kien nao do tu ham da cho 
+        function soNguyen(x1) {
+            const soDu = x1.map(number => number % 2);
+            return soDu;
+        }
+        // loc ra mot mang moi
+        function soLoc(x2) {
+            const sochan = x2.filter( number => number % 2 == 0 );
+            return sochan;
+        }
+        function dayTen(namess,kytu){
+                let tenH;
+                tenH = namess.filter (number =>( number.substring(0,1)== kytu|| number.substring(0,1)== kytu));
+                return tenH;
+
+        }
+        // ham tra ve vi tri dau tien cua so le, vi tri cuoi cung cua so chan 
+        function checkNumber(num) {
+                return num % 2 ;
+        }
+        function viTriSoLe (data) {
+            console.log(` "So le dau tien cua mang la " ${data.find(checkNumber)}`);
+            console.log("Vi tri so le dau tien cua mang la "+ data.findIndex(checkNumber));
+        }
+      
+        function checkNumber2(num2){
+            return num2 % 2 == 0 ;
+        }
+       function viTriSoChan(data2){
+       
+           
+           let vitrisochan = data2.lastIndexOf(data2.forEach(function(element) {
+               if (element % 2 ==0){
+                   return element;
+                   
+               }  
+           }));
+           console.log(vitrisochan);
+       }
+       function Baiba(xxx)
+            {
+                let soChan;
+                let soLe;
+                soChan = xxx.filter(number => (number % 2) == 0 );
+                soLe = xxx.filter(number => (number % 2) != 0 );
+                // return soLe[0];
+                // return soChan[soLe.length-1];
+                return ("Số Lẻ đầu tiên là " + soLe[0] + " và số Chẵn cuối cùng là " + soChan[soLe.length-1]);
+            }
+      
+       // Kiem tra phan tu nho nhat 
+      function timsolonnhat(number){
+           let max = number[0];
+           for (i = 1; i < number.length; i++ ) {
+               if (max < number[i])
+                   max = number[i]     
+           }
+           
+           let min = number[0];
+           for (i= 1; i < number.length; i++){
+               if (min > number[i])
+               min = number[i]
+           }
+           return ("so nho nhat la "+ min + " va " + "So lon nhat la "+ max);
+       }
+    // code bai 4
+        // cho mot so nguyen kiem tra no la so 0 so duong hay so am
+        function checkNumber(x) {
+            if (typeof x == "string") {
+                return "Hay Nhap Vao So"
+            } else
+                if (x > 0) {
+                    return 'So Duong'
+                }
+                else if (x < 0) {
+                    return 'So Am';
+                }
+            return 'So 0';
+        }
+        // cho diem 3 mon toan, ly, hoa tinh diem trung binh cac mon va xep loai hoc luc
+        // biet 0 den be hon 3 la yeu 
+        // 3 den be hon 6.5 la trung binh
+        // 6.5 den be hon 8 la kha
+        // 8 den bang 10 la gioi
+        function diemtb(a, b, c) {
+            let tb = (a + b + c) / 3;
+            if (a >= 0 && a <= 10 && b >= 0 && b <= 10 && c >= 0 && c <= 10) {
+                if (tb >= 0 && tb < 3) {
+                    return 'Hoc luc Yeu'
+                }
+                if (tb >= 3 && tb < 6.5) {
+                    return "Hoc luc trung binh"
+                }
+                if (tb >= 6.5 && tb < 8) {
+                    return "Hoc luc Kha"
+                }
+                if (tb >= 8 && tb <= 10) {
+                    return "Hoc luc Gioi"
+                }
+            }
+            else {
+                return "Diem Khong Hop Le"
+            }
+        }
+     function getDay(){
+        switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+    
+    }
+    return day;
+}
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

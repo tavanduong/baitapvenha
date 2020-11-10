@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Một trang web cho phép người dùng tạo tài khoản. Hãy viết hàm kiểm tra tính hợp lệ của thông tin người dùng nhập vào. Nếu hợp lệ trả về "Pass", nếu không hợp lệ trả về "Fail".
+
+Giả sử tham số đầu vào là 1 object có dạng như sau (giá trị của thuộc tính là do người dùng nhập và đều là chuỗi): 
+
+	{
+		username: "username",
+	  	password: "secret",
+	  	confirm: "secret"
+	}
+Hãy kiểm tra username phải khác rỗng và không được vượt quá 20 ký tự, password phải có độ dài từ 6 đến 32 ký tự, confirm phải giống password. -->
+    <form action="#" method="POST">
+        <label for="username">Ten dang nhap</label><br />
+
+        <input id="username" type="text" placeholder="UserName" name="username"><br /><br />
+        <label for="username">Mat khau</label><br />
+
+        <input id="password" type="password" placeholder="PassWord" name="username"><br /><br />
+
+        <label for="username">Nhap lai mat khau</label><br />
+        <input id="confirm" type="password" placeholder="Confirm" name="username"><br /><br />
+
+        <button type="submit" onclick="check()"> Register</button>
+        <script>
+            function check() {
+                let guessUserName = document.getElementById("username").value;
+                let guessPassWord = document.getElementById("password").value;
+                let guessConfirm = document.getElementById("confirm").value;
+                if (guessUserName == "" || guessPassWord == "" || guessConfirm == "") {
+                    alert("Ban hay dien day du thong tin ")
+                    return;
+                }
+                if (guessUserName.length > 20) {
+                    alert(" Ten dang nhap nhap vao phai duoi 20 ki tu ")
+                    return
+                }
+                if (guessPassWord.length < 6 || guessPassWord.length > 32) {
+                    alert("Mat khau co do dai tu 6 den 32 ki tu")
+                    return
+                }
+                if (guessPassWord !== guessConfirm) {
+                    alert("Xac nhan mat khau chua dung")
+                    return
+                }
+                else {
+                    alert("dang ki thanh cong")
+                }
+            } 
+        </script>
+    </form>
+
+
+    <!-- Viết hàm translate() có tác dụng dịch từ "Hello" sang 5 thứ tiếng khác nhau (tự chọn) với tham số truyền vào là mã quốc gia (tham số lấy từ prompt),
+         sử dụng switch và mặc định dịch sang tiếng Việt. -->
+    <button onclick="translate1()">Where are you from?</button>
+    <script>
+        function translate1() {
+            let value = prompt("Ban den tu quoc gia nao? Anh, Trung Quoc, Phap, Nhat, Hy Lap?");
+            switch (value) {
+                case "Anh" : 
+                    alert("Hello")
+                    break;
+                
+                case "Trung Quoc" : 
+                    alert("你好")
+                    break;
+                case "Phap " :
+                    alert("Bonjour")
+                     break;
+                case "Nhat" :
+                    alert("こんにちは")
+                    break;
+                case "Hy Lap" :
+                    alert("γεια")
+                    break;
+                    default:
+                        alert("Xin chao");
+            }
+        }
+    </script>
+     <!-- DOI TIEN TE -->
+     <form action="#">
+        <label for="usd">USD</label> <input type="radio" name="doitien" id="usd" value="usd"><br/>
+        <label for="euro">EURO</label> <input type="radio" name="doitien" id="euro" value="euro"><br/>
+       <label for="sotien">Nhap So Tien</label> <input type="text" name="doitien" id="sotien" >
+        <button onclick="doiTien()">Doi Tien</button>
+        <script>
+            function doiTien() {
+                var arr = document.getElementsByTagName('input')
+                var soTienMuonDoi = parseInt(arr[5].value);
+                if (arr[3].checked){
+                    var tienVietNam = soTienMuonDoi  * 23270;
+                    alert(`${soTienMuonDoi} DOLA bang ${tienVietNam} VND`)
+                }
+                else {
+                    var tienVietNam = soTienMuonDoi  * 26719.93;
+                    alert(`${soTienMuonDoi} EURO bang ${tienVietNam} VND`)
+                }
+                
+               
+            }
+        </script>
+     </form>
+     
+     
+
+</body>
+
+</html>
